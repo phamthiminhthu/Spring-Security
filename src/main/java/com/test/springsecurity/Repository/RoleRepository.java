@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Integer> {
-    @Query("SELECT Role FROM Role WHERE Role.name like %?1")
+    @Query("SELECT r FROM Role r WHERE r.name = ?1")
     Role findByName(String name);
 }

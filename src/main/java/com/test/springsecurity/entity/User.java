@@ -19,11 +19,12 @@ public class User implements Serializable {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     @Email
     private String email;
 
     @Column(name = "password", nullable = false)
+    @Size(min = 6)
     private String password;
 
     @ManyToMany()

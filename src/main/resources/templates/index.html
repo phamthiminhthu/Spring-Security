@@ -7,6 +7,11 @@
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
+test:
+<div sec:authorize="hasRole('ADMIN')">
+    <p>This content is only shown to administrators.</p>
+</div>
+
 Logged user: <span sec:authentication="name"></span> <br/>
 Roles: <span sec:authentication="principal.authorities"></span>
 <form action="#" th:action="@{/logout}" method="POST">
